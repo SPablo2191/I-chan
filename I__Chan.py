@@ -29,15 +29,15 @@ class i_chan_Bot:
         return vector #recibe una lista de strings, y va uno por uno realizando el proceso de lematizacion
 
     remove_punct_dict=dict((ord(punct),None) for punct in string.punctuation) #arma una lista para eliminar signos de puntuacion
-    def RespuestasPeronistas(self,entrada):
-        respuesta=""
-        if(entrada=="¿De que trata este proyecto?"):
-            respuesta="El objetivo de este proyecto es el desarrollo de un chatbot para la pagina web del grupo de investigación IDEAS de la Facultad de ingeniería de la universidad católica de Salta, presente en una interfaz conversacional sencilla y que integre tecnologías Machine Learning y Procesamiento de Lenguaje Natural (PLN), con las que pueda responder cualquier consulta del usuario relacionada a las actividades del grupo.<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />"
-        if(entrada=="¿Qué es IDEAS?"):
-            respuesta="Es un grupo de incubación de trabajos de investigación de alumnos de la Facultad de ingeniería de la universidad católica de Salta."
-        if(entrada=="Como funciona 'I-Chan'?"):
-            respuesta="A partir de que el usuario formula su consulta, ‘I-Chan’ inicia un proceso de tratamiento, análisis y evaluación empleando procesos como la lematización y herramientas de medida como el TF-IDF y la similitud de Coseno a fin de poder hallar la semejanza entre la consulta hecha y las preguntas disponibles en su base de datos; si existe alguna con un grado de similitud alto se retornara la respuesta a dicha pregunta."
-        return respuesta
+    # def RespuestasPeronistas(self,entrada):
+    #     respuesta=""
+    #     if(entrada=="¿De que trata este proyecto?"):
+    #         respuesta="El objetivo de este proyecto es el desarrollo de un chatbot para la pagina web del grupo de investigación IDEAS de la Facultad de ingeniería de la universidad católica de Salta, presente en una interfaz conversacional sencilla y que integre tecnologías Machine Learning y Procesamiento de Lenguaje Natural (PLN), con las que pueda responder cualquier consulta del usuario relacionada a las actividades del grupo.<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />"
+    #     if(entrada=="¿Qué es IDEAS?"):
+    #         respuesta="Es un grupo de incubación de trabajos de investigación de alumnos de la Facultad de ingeniería de la universidad católica de Salta."
+    #     if(entrada=="Como funciona 'I-Chan'?"):
+    #         respuesta="A partir de que el usuario formula su consulta, ‘I-Chan’ inicia un proceso de tratamiento, análisis y evaluación empleando procesos como la lematización y herramientas de medida como el TF-IDF y la similitud de Coseno a fin de poder hallar la semejanza entre la consulta hecha y las preguntas disponibles en su base de datos; si existe alguna con un grado de similitud alto se retornara la respuesta a dicha pregunta."
+    #     return respuesta
 
 
 
@@ -234,6 +234,7 @@ class i_chan_Bot:
 
     #--------------------------------------------Analisis de pregunta---------------------------------------------------------
     def Responder(self,entrada_usuario):
+        print("hola")
         if(self.saludos(entrada_usuario)==None):
             if(self.charla_Basica(entrada_usuario)==None):
                 if(self.Respuesta_Despedida(entrada_usuario)==None):
